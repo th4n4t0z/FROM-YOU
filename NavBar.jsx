@@ -7,7 +7,7 @@ function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          <IconButton align="center"
             size="large"
             edge="start"
             color="inherit"
@@ -17,9 +17,9 @@ function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            From You
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Sign In</Button>
         </Toolbar>
       </AppBar>
     </Box>
