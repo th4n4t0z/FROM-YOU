@@ -1,6 +1,8 @@
-// src/Login.js
 import React, { useState } from 'react';
 import NavBar from './NavBar';
+import { Box, Container, Button, TextField } from '@mui/material';
+import { grey } from '@mui/material/colors';
+
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -11,32 +13,49 @@ const Login = () => {
   };
 
   return (
-    <div >
-      <NavBar/>
-      <h2>Login</h2>
-      <form>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
-        <button type="button" onClick={handleLogin}>
-          Login
-        </button>
-      </form>
+    <div>
+      <NavBar />
+      <Container maxWidth="sm">
+        <Box
+          bgcolor={grey[100]}
+          boxShadow={3}
+          borderRadius={8}
+          p={3}
+          mt={5}
+          textAlign="center"
+        >
+          <h2>Login</h2>
+          <form>
+            <TextField
+              label="Username"
+              variant="outlined"
+              fullWidth
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={{ marginBottom: 20 }}
+            />
+            <br />
+            <TextField
+              label="Password"
+              variant="outlined"
+              type="password"
+              fullWidth
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ marginBottom: 20 }}
+            />
+            <br />
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleLogin}
+              style={{ width: '100%', padding: 15 }}
+            >
+              Login
+            </Button>
+          </form>
+        </Box>
+      </Container>
     </div>
   );
 };
