@@ -37,24 +37,10 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
       <center>
-      <Box sx={{ marginTop: '250px' }}>
-        <Button variant="contained" color="primary" size='large'  sx={{ bgcolor: '#36454F', color: '#fff' }}>DONATE</Button>
-        <Button variant="contained" color="primary" size='large' style={{ marginLeft: '10px' }} sx={{ bgcolor: '#36454F', color: '#fff' }}>RECEIVE</Button>
-      </Box>
+        <Box sx={{ marginTop: '250px' }}>
+          <Button variant="contained" color="primary" size='large' sx={{ bgcolor: '#36454F', color: '#fff' }}>LET'S START</Button>
+        </Box>
       </center>
-      <Box sx={{ mt: 4, mx: 'auto', maxWidth: '1000px', textAlign: 'center', p: 50}}>
-        <Typography variant="h4" gutterBottom>
-          About Us
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend tortor sed ultricies aliquet. 
-          Morbi nec dui non massa consequat hendrerit a sed sem. Donec nec ultrices velit.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Fusce vitae eleifend eros. Integer posuere eros eu tellus tempus vehicula.
-          Nulla facilisi. Vivamus sed tortor eget lectus vestibulum dapibus.
-        </Typography>
-      </Box>
     </Box>
   );
 }
