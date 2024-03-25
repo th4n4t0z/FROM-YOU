@@ -1,62 +1,81 @@
 import React, { useState } from 'react';
-import NavBar from './NavBar';
-import { Box, Container, Button, TextField } from '@mui/material';
-import { grey } from '@mui/material/colors';
+import {
+  Box,
+  Button,
+  Container,
+  CssBaseline,
+  TextField,
+  Typography,
+} from '@mui/material';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Add your authentication logic here
-    console.log('Logging in with:', username, password);
+    // Handle login logic here
+    console.log('Email:', email);
+    console.log('Password:', password);
   };
 
   return (
-    <div>
-      <NavBar />
-      <Container maxWidth="sm">
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
+        sx={{
+          marginTop: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Typography component="h1" variant="h5">
+          Login
+        </Typography>
         <Box
-          bgcolor={grey[100]}
-          boxShadow={3}
-          borderRadius={8}
-          p={3}
-          mt={5}
-          textAlign="center"
+          component="form"
+          noValidate
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleLogin();
+          }}
+          sx={{ mt: 1 }}
         >
-          <h2>Login</h2>
-          <form>
-            <TextField
-              label="Username"
-              variant="outlined"
-              fullWidth
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              style={{ marginBottom: 20 }}
-            />
-            <br />
-            <TextField
-              label="Password"
-              variant="outlined"
-              type="password"
-              fullWidth
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={{ marginBottom: 20 }}
-            />
-            <br />
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleLogin}
-              style={{ width: '100%', padding: 15 }}
-            >
-              Login
-            </Button>
-          </form>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Login
+          </Button>
         </Box>
-      </Container>
-    </div>
+      </Box>
+    </Container>
   );
 };
 
